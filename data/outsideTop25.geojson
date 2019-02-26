@@ -1,0 +1,577 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Bend",
+        "Pop_2010": "76,636",
+        "Pop_2011": "77,518",
+        "Pop_2012": "78,559",
+        "Pop_2013": "80,852",
+        "Pop_2014": "83,472",
+        "Pop_2015": "86,242",
+        "Pop_2016": "90,615",
+        "Pop_2017": "94,520",
+        "name": "Bend",
+        "desc": "Bend, OR",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.3153687,
+          44.0578194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Portland",
+        "Pop_2010": "66,086",
+        "Pop_2011": "66,164",
+        "Pop_2012": "66,267",
+        "Pop_2013": "66,385",
+        "Pop_2014": "66,661",
+        "Pop_2015": "66,777",
+        "Pop_2016": "66,892",
+        "Pop_2017": "66,882",
+        "name": "Portland",
+        "desc": "Portland, OR",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.6756287,
+          45.5117912
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Salida",
+        "Pop_2010": "5,236",
+        "Pop_2011": "5,269",
+        "Pop_2012": "5,309",
+        "Pop_2013": "5,398",
+        "Pop_2014": "5,385",
+        "Pop_2015": "5,453",
+        "Pop_2016": "5,724",
+        "Pop_2017": "5,856",
+        "name": "Salida",
+        "desc": "Salida, CO",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.9923401,
+          38.5366096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Saint Petersberg",
+        "Pop_2010": "245,216",
+        "Pop_2011": "245,877",
+        "Pop_2012": "246,782",
+        "Pop_2013": "248,661",
+        "Pop_2014": "252,635",
+        "Pop_2015": "255,668",
+        "Pop_2016": "259,919",
+        "Pop_2017": "263,255",
+        "name": "Saint Petersberg",
+        "desc": "St Petersburg, Florida",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.6403,
+          27.7676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Charleston",
+        "Pop_2010": "120,338",
+        "Pop_2011": "122,668",
+        "Pop_2012": "124,894",
+        "Pop_2013": "126,876",
+        "Pop_2014": "128,981",
+        "Pop_2015": "131,794",
+        "Pop_2016": "133,859",
+        "Pop_2017": "134,875",
+        "name": "Charleston",
+        "desc": "Charleston, SC",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.9316025,
+          32.7811508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Bishop",
+        "Pop_2010": 3872,
+        "Pop_2011": 3848,
+        "Pop_2012": 3842,
+        "Pop_2013": 3838,
+        "Pop_2014": 3828,
+        "Pop_2015": 3796,
+        "Pop_2016": 3757,
+        "Pop_2017": 3760,
+        "name": "Bishop",
+        "desc": "Bishop, California",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.3997,
+          37.3614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Santa Fe",
+        "Pop_2010": "81,030",
+        "Pop_2011": "81,621",
+        "Pop_2012": "82,022",
+        "Pop_2013": "82,339",
+        "Pop_2014": "82,594",
+        "Pop_2015": "82,880",
+        "Pop_2016": "83,287",
+        "Pop_2017": "83,776",
+        "name": "Santa Fe",
+        "desc": "Santa Fe, NM",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.9379578,
+          35.6916809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Grand Rapids",
+        "Pop_2010": "187,992",
+        "Pop_2011": "189,008",
+        "Pop_2012": "190,617",
+        "Pop_2013": "192,725",
+        "Pop_2014": "194,054",
+        "Pop_2015": "194,847",
+        "Pop_2016": "196,251",
+        "Pop_2017": "198,829",
+        "name": "Grand Rapids",
+        "desc": "Grand Rapids, MI",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.6719513,
+          42.9664192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Dayton",
+        "Pop_2010": "142,330",
+        "Pop_2011": "141,958",
+        "Pop_2012": "141,856",
+        "Pop_2013": "141,877",
+        "Pop_2014": "140,973",
+        "Pop_2015": "140,677",
+        "Pop_2016": "140,743",
+        "Pop_2017": "140,371",
+        "name": "Dayton",
+        "desc": "Dayton, OH",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.1938095,
+          39.759201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Missoula",
+        "Pop_2010": "66,962",
+        "Pop_2011": "67,551",
+        "Pop_2012": "68,380",
+        "Pop_2013": "68,803",
+        "Pop_2014": "69,530",
+        "Pop_2015": "70,592",
+        "Pop_2016": "72,003",
+        "Pop_2017": "73,340",
+        "name": "Missoula",
+        "desc": "Missoula, MT",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.9962463,
+          46.8727798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Kansas City",
+        "Pop_2010": "460,734",
+        "Pop_2011": "462,219",
+        "Pop_2012": "464,588",
+        "Pop_2013": "467,372",
+        "Pop_2014": "470,941",
+        "Pop_2015": "475,310",
+        "Pop_2016": "482,118",
+        "Pop_2017": "488,943",
+        "name": "Kansas City",
+        "desc": "Kansas City, MO",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.583107,
+          39.1034508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Seattle",
+        "Pop_2010": "610,333",
+        "Pop_2011": "622,532",
+        "Pop_2012": "635,974",
+        "Pop_2013": "654,176",
+        "Pop_2014": "669,641",
+        "Pop_2015": "685,447",
+        "Pop_2016": "707,255",
+        "Pop_2017": "724,745",
+        "name": "Seattle",
+        "desc": "Seattle, WA",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3294525,
+          47.603569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Birmingham",
+        "Pop_2010": 211739,
+        "Pop_2011": 211516,
+        "Pop_2012": 210660,
+        "Pop_2013": 211094,
+        "Pop_2014": 210998,
+        "Pop_2015": 211621,
+        "Pop_2016": 211263,
+        "Pop_2017": 210710,
+        "name": "Birmingham",
+        "desc": "Birmingham, Alabama",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.8104,
+          33.5186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Spearfish",
+        "Pop_2010": "10,591",
+        "Pop_2011": "10,685",
+        "Pop_2012": "10,744",
+        "Pop_2013": "11,097",
+        "Pop_2014": "11,101",
+        "Pop_2015": "11,239",
+        "Pop_2016": "11,450",
+        "Pop_2017": "11,609",
+        "name": "Spearfish",
+        "desc": "Spearfish, SD",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.8590927,
+          44.4905815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Austin",
+        "Pop_2010": "806,463",
+        "Pop_2011": "828,700",
+        "Pop_2012": "854,350",
+        "Pop_2013": "874,910",
+        "Pop_2014": "900,621",
+        "Pop_2015": "919,974",
+        "Pop_2016": "938,200",
+        "Pop_2017": "950,715",
+        "name": "Austin",
+        "desc": "Austin, TX",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.7429886,
+          30.2675896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "San Luis Obispo",
+        "Pop_2010": "45,204",
+        "Pop_2011": "45,408",
+        "Pop_2012": "45,811",
+        "Pop_2013": "46,332",
+        "Pop_2014": "46,573",
+        "Pop_2015": "47,115",
+        "Pop_2016": "47,438",
+        "Pop_2017": "47,541",
+        "name": "San Luis Obispo",
+        "desc": "San Luis Obispo, CA",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.6627884,
+          35.2858315
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Minneapolis",
+        "Pop_2010": "383,074",
+        "Pop_2011": "388,086",
+        "Pop_2012": "392,953",
+        "Pop_2013": "400,464",
+        "Pop_2014": "407,395",
+        "Pop_2015": "411,426",
+        "Pop_2016": "415,622",
+        "Pop_2017": "422,331",
+        "name": "Minneapolis",
+        "desc": "Minneapolis, MN",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2649384,
+          44.9790192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Bentonville",
+        "Pop_2010": "35,795",
+        "Pop_2011": "37,109",
+        "Pop_2012": "38,582",
+        "Pop_2013": "40,316",
+        "Pop_2014": "41,828",
+        "Pop_2015": "44,586",
+        "Pop_2016": "47,017",
+        "Pop_2017": "49,298",
+        "name": "Bentonville",
+        "desc": "Bentonville, AR",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.2094879,
+          36.3723297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Reno",
+        "Pop_2010": "225,767",
+        "Pop_2011": "227,492",
+        "Pop_2012": "229,556",
+        "Pop_2013": "231,768",
+        "Pop_2014": "235,101",
+        "Pop_2015": "239,203",
+        "Pop_2016": "243,698",
+        "Pop_2017": "248,853",
+        "name": "Reno",
+        "desc": "Reno, NV",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.8134995,
+          39.5275612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Flagstaff",
+        "Pop_2010": "66,145",
+        "Pop_2011": "66,080",
+        "Pop_2012": "67,900",
+        "Pop_2013": "68,028",
+        "Pop_2014": "68,502",
+        "Pop_2015": "69,895",
+        "Pop_2016": "71,060",
+        "Pop_2017": "71,975",
+        "name": "Flagstaff",
+        "desc": "Flagstaff, AZ",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6512985,
+          35.1982002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Fort Collins",
+        "Pop_2010": "145,045",
+        "Pop_2011": "146,291",
+        "Pop_2012": "149,020",
+        "Pop_2013": "152,059",
+        "Pop_2014": "156,058",
+        "Pop_2015": "160,234",
+        "Pop_2016": "162,308",
+        "Pop_2017": "165,080",
+        "name": "Fort Collins",
+        "desc": "Fort Collins, CO",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.076622,
+          40.5814705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Boise",
+        "Pop_2010": "208,579",
+        "Pop_2011": "211,430",
+        "Pop_2012": "214,600",
+        "Pop_2013": "216,358",
+        "Pop_2014": "218,437",
+        "Pop_2015": "219,724",
+        "Pop_2016": "223,361",
+        "Pop_2017": "226,570",
+        "name": "Boise",
+        "desc": "Boise, ID",
+        "color": "",
+        "source": "Bing Maps",
+        "precision": "city/town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.1933975,
+          43.6076088
+        ]
+      }
+    }
+  ]
+}

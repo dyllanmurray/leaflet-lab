@@ -1,8 +1,8 @@
 function createMap(){
     //create the map
     var map = L.map('map', {
-        center: [20, 0],
-        zoom: 2
+        center:  [37.117, -103.333],
+        zoom: 5
     });
 
     //add OSM base tilelayer
@@ -29,7 +29,7 @@ function onEachFeature(feature, layer) {
 };
 function getData(map){
     //load the data
-    $.ajax("data/MegaCities.geojson", {
+    $.ajax("data/outsideTop25.geojson", {
         dataType: "json",
         success: function(response){
             var geoJsonMarkerOptions = {
