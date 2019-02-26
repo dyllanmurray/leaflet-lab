@@ -12,12 +12,7 @@
         "Pop_2014": "83,472",
         "Pop_2015": "86,242",
         "Pop_2016": "90,615",
-        "Pop_2017": "94,520",
-        "name": "Bend",
-        "desc": "Bend, OR",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "94,520"
       },
       "geometry": {
         "type": "Point",
@@ -38,12 +33,7 @@
         "Pop_2014": "66,661",
         "Pop_2015": "66,777",
         "Pop_2016": "66,892",
-        "Pop_2017": "66,882",
-        "name": "Portland",
-        "desc": "Portland, OR",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "66,882"
       },
       "geometry": {
         "type": "Point",
@@ -64,12 +54,7 @@
         "Pop_2014": "5,385",
         "Pop_2015": "5,453",
         "Pop_2016": "5,724",
-        "Pop_2017": "5,856",
-        "name": "Salida",
-        "desc": "Salida, CO",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "5,856"
       },
       "geometry": {
         "type": "Point",
@@ -90,12 +75,7 @@
         "Pop_2014": "252,635",
         "Pop_2015": "255,668",
         "Pop_2016": "259,919",
-        "Pop_2017": "263,255",
-        "name": "Saint Petersberg",
-        "desc": "St Petersburg, Florida",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "263,255"
       },
       "geometry": {
         "type": "Point",
@@ -116,12 +96,7 @@
         "Pop_2014": "128,981",
         "Pop_2015": "131,794",
         "Pop_2016": "133,859",
-        "Pop_2017": "134,875",
-        "name": "Charleston",
-        "desc": "Charleston, SC",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "134,875"
       },
       "geometry": {
         "type": "Point",
@@ -142,12 +117,7 @@
         "Pop_2014": 3828,
         "Pop_2015": 3796,
         "Pop_2016": 3757,
-        "Pop_2017": 3760,
-        "name": "Bishop",
-        "desc": "Bishop, California",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": 3760
       },
       "geometry": {
         "type": "Point",
@@ -168,12 +138,7 @@
         "Pop_2014": "82,594",
         "Pop_2015": "82,880",
         "Pop_2016": "83,287",
-        "Pop_2017": "83,776",
-        "name": "Santa Fe",
-        "desc": "Santa Fe, NM",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "83,776"
       },
       "geometry": {
         "type": "Point",
@@ -194,12 +159,7 @@
         "Pop_2014": "194,054",
         "Pop_2015": "194,847",
         "Pop_2016": "196,251",
-        "Pop_2017": "198,829",
-        "name": "Grand Rapids",
-        "desc": "Grand Rapids, MI",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "198,829"
       },
       "geometry": {
         "type": "Point",
@@ -220,12 +180,7 @@
         "Pop_2014": "140,973",
         "Pop_2015": "140,677",
         "Pop_2016": "140,743",
-        "Pop_2017": "140,371",
-        "name": "Dayton",
-        "desc": "Dayton, OH",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "140,371"
       },
       "geometry": {
         "type": "Point",
@@ -246,12 +201,7 @@
         "Pop_2014": "69,530",
         "Pop_2015": "70,592",
         "Pop_2016": "72,003",
-        "Pop_2017": "73,340",
-        "name": "Missoula",
-        "desc": "Missoula, MT",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "73,340"
       },
       "geometry": {
         "type": "Point",
@@ -272,12 +222,7 @@
         "Pop_2014": "470,941",
         "Pop_2015": "475,310",
         "Pop_2016": "482,118",
-        "Pop_2017": "488,943",
-        "name": "Kansas City",
-        "desc": "Kansas City, MO",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "488,943"
       },
       "geometry": {
         "type": "Point",
@@ -298,12 +243,7 @@
         "Pop_2014": "669,641",
         "Pop_2015": "685,447",
         "Pop_2016": "707,255",
-        "Pop_2017": "724,745",
-        "name": "Seattle",
-        "desc": "Seattle, WA",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "724,745"
       },
       "geometry": {
         "type": "Point",
@@ -324,12 +264,7 @@
         "Pop_2014": 210998,
         "Pop_2015": 211621,
         "Pop_2016": 211263,
-        "Pop_2017": 210710,
-        "name": "Birmingham",
-        "desc": "Birmingham, Alabama",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": 210710
       },
       "geometry": {
         "type": "Point",
@@ -350,12 +285,7 @@
         "Pop_2014": "11,101",
         "Pop_2015": "11,239",
         "Pop_2016": "11,450",
-        "Pop_2017": "11,609",
-        "name": "Spearfish",
-        "desc": "Spearfish, SD",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "11,609"
       },
       "geometry": {
         "type": "Point",
@@ -376,12 +306,7 @@
         "Pop_2014": "900,621",
         "Pop_2015": "919,974",
         "Pop_2016": "938,200",
-        "Pop_2017": "950,715",
-        "name": "Austin",
-        "desc": "Austin, TX",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "950,715"
       },
       "geometry": {
         "type": "Point",
@@ -402,12 +327,7 @@
         "Pop_2014": "46,573",
         "Pop_2015": "47,115",
         "Pop_2016": "47,438",
-        "Pop_2017": "47,541",
-        "name": "San Luis Obispo",
-        "desc": "San Luis Obispo, CA",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "47,541"
       },
       "geometry": {
         "type": "Point",
@@ -428,12 +348,7 @@
         "Pop_2014": "407,395",
         "Pop_2015": "411,426",
         "Pop_2016": "415,622",
-        "Pop_2017": "422,331",
-        "name": "Minneapolis",
-        "desc": "Minneapolis, MN",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "422,331"
       },
       "geometry": {
         "type": "Point",
@@ -454,12 +369,7 @@
         "Pop_2014": "41,828",
         "Pop_2015": "44,586",
         "Pop_2016": "47,017",
-        "Pop_2017": "49,298",
-        "name": "Bentonville",
-        "desc": "Bentonville, AR",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "49,298"
       },
       "geometry": {
         "type": "Point",
@@ -480,12 +390,7 @@
         "Pop_2014": "235,101",
         "Pop_2015": "239,203",
         "Pop_2016": "243,698",
-        "Pop_2017": "248,853",
-        "name": "Reno",
-        "desc": "Reno, NV",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "248,853"
       },
       "geometry": {
         "type": "Point",
@@ -506,12 +411,7 @@
         "Pop_2014": "68,502",
         "Pop_2015": "69,895",
         "Pop_2016": "71,060",
-        "Pop_2017": "71,975",
-        "name": "Flagstaff",
-        "desc": "Flagstaff, AZ",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "71,975"
       },
       "geometry": {
         "type": "Point",
@@ -532,12 +432,7 @@
         "Pop_2014": "156,058",
         "Pop_2015": "160,234",
         "Pop_2016": "162,308",
-        "Pop_2017": "165,080",
-        "name": "Fort Collins",
-        "desc": "Fort Collins, CO",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "165,080"
       },
       "geometry": {
         "type": "Point",
@@ -558,12 +453,7 @@
         "Pop_2014": "218,437",
         "Pop_2015": "219,724",
         "Pop_2016": "223,361",
-        "Pop_2017": "226,570",
-        "name": "Boise",
-        "desc": "Boise, ID",
-        "color": "",
-        "source": "Bing Maps",
-        "precision": "city/town"
+        "Pop_2017": "226,570"
       },
       "geometry": {
         "type": "Point",
