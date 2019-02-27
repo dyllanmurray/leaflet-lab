@@ -51,12 +51,6 @@ function createMap(){
     var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
     }).addTo(map);
-
-   //adds a featuer to cities for every record found in the geojson
-    function addMyData(feature, layer){
-        cities.addLayer(layer)
-    };
-
     	//control layers
     L.control.layers(baseMaps).addTo(map);
     
@@ -84,13 +78,14 @@ function getData(map){
             var attributes = processData(response)
             createPropSymbols(response, map, attributes);
             createSequenceControls(map, attributes);
+            createLegend(map, attributes);
         }
     });
 };
 
 function calcPropRad(attValue) {
     //scale factor to adjust symbol size evenly
-    var scaleFactor = .009;
+    var scaleFactor = .0029;
     //area based on attribute value and scale factor
     var area = attValue * scaleFactor;
     //radius calculated based on area
@@ -205,7 +200,7 @@ function updatePropSymbols(map,attribute){
             //update each feature's radius based on new attribute values
             var radius = calcPropRad(props[attribute]);
             layer.setRadius(radius);
-
+            updateLegend(map, attribute);	
             //add city to popup content string
             var popupContent = "<p><b>City:</b> " + props.City + "</p>";
 
@@ -242,5 +237,100 @@ function processData(data){
     return attributes;
 };
 
+function createLegend(map, attributes){
+	var LegendControl = L.Control.extend({
+		options: {
+            position: 'bottomright'
+        },
 
+        onAdd: function (map) {
+            // create the control container with a particular class name
+            var container = L.DomUtil.create('div', 'legend-control-container');
+
+            //add temporal legend div to container
+            $(container).append('<div id="temporal-legend">')
+			
+			var svg = '<svg id="attribute-legend" width="180px" height="80px">';
+			//array of circle names to base loop on
+			var circles = {
+            max: 20,
+            mean: 40,
+            min: 60
+        };
+
+        //loop to add each circle and text to svg string
+        for (var circle in circles){
+            //circle string
+            svg += '<circle class="legend-circle" id="' + circle + '" fill="#ffd204" fill-opacity="0.8" stroke="#9b1e25" cx="30"/>';
+
+            //text string
+            svg += '<text id="' + circle + '-text" x="65" y="' + circles[circle] + '"></text>';
+        };
+			//add attribute legend svg to container			
+			$(container).append(svg);			
+            return container;
+		}
+	});
+
+    map.addControl(new LegendControl());
+	updateLegend(map, attributes[0]);
+};
+
+function getCircleValues(map, attribute){
+	//start with min at highest possible and max at lowest possible number
+	var min = Infinity,
+        max = -Infinity;
+
+    map.eachLayer(function(layer){
+        //get the attribute value
+        if (layer.feature){
+            var attributeValue = Number(layer.feature.properties[attribute]);
+			
+			//test for min
+			if (attributeValue < min){
+                min = attributeValue;
+            };
+
+            //test for max
+            if (attributeValue > max){
+                max = attributeValue;
+            };
+        };
+    });
+
+    //set mean
+    var mean = (max + min) / 2;
+
+    //return values as an object
+    return {
+        max: max,
+        mean: mean,
+        min: min
+    };
+};
+
+
+function updateLegend(map, attribute){
+    //create dynamic title
+    var year = attribute.split("_")[1];
+    var content = "Population in " + year;
+
+    //replace legend content
+    $('#temporal-legend').html(content);
+
+    //get the max, mean, and min values as an object
+    var circleValues = getCircleValues(map, attribute);
+	for (var key in circleValues){
+        //get radius
+        var radius = calcPropRad(circleValues[key]);
+
+        $('#'+key).attr({
+            cy: 55 - radius,
+            r: radius
+        });
+
+        //Step 4: add legend text
+        $('#'+key+'-text').text(Math.round((circleValues[key]*100)/100));
+    };
+};
 $(document).ready(createMap);
