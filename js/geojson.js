@@ -74,19 +74,7 @@ function createMap(){
     getData(map);
 };
 
-// function to retrieve the data and place it on the map
-// This snippet loops through the geojson and prepares a popup for each feature/////
-// function onEachFeature(feature, layer) {
-//     //no property named popupContent; instead, create html string with all properties
-//     var popupContent = "";
-//     if (feature.properties) {
-//         //loop to add feature property names and values to html string
-//         for (var property in feature.properties){
-//             popupContent += "<p>" + property + ": " + feature.properties[property] + "</p>";
-//         }
-//         layer.bindPopup(popupContent);
-//     };
-// };
+
 //Add circle markers for point features to the map
 function createPropSymbols(data, map, attributes){
     //create a Leaflet GeoJSON layer and add it to the map
@@ -104,15 +92,16 @@ function getData(map){
         dataType: "json",
         success: function(response){
             //call function to create proportional symbols
-            createPropSymbols(response, map);
-            createSequenceControls(map);
+            var attributes = processData(response)
+            createPropSymbols(response, map, attributes);
+            createSequenceControls(map, attributes);
         }
     });
 };
 
 function calcPropRad(attValue) {
     //scale factor to adjust symbol size evenly
-    var scaleFactor = .002;
+    var scaleFactor = .009;
     //area based on attribute value and scale factor
     var area = attValue * scaleFactor;
     //radius calculated based on area
@@ -122,15 +111,16 @@ function calcPropRad(attValue) {
 
 };
 
-function pointToLayer(feature, latlng){
+function pointToLayer(feature, latlng, attributes){
     //Determine which attribute to visualize with proportional symbols
-    var attribute = "Pop_2015";
+    var attribute = attributes[0];
+    console.log(attribute)
 
     //create marker options
     var options = {
-        fillColor: "#ff7800",
-        color: "#000",
-        weight: 1,
+        fillColor: "#ffd204",
+        color: "#9b1e25",
+        weight: 1.5,
         opacity: 1,
         fillOpacity: 0.8
     };
@@ -157,7 +147,7 @@ function pointToLayer(feature, latlng){
     return layer;
 };
 
-function createSequenceControls(map){
+function createSequenceControls(map, attributes){
     var SequenceControl = L.Control.extend({
         options: {
             position: 'bottomleft'
@@ -191,6 +181,75 @@ function createSequenceControls(map){
         value: 0,
         step: 1
     });
+
+    $('.skip').click(function(){
+        //get the old index value
+        var index = $('.range-slider').val();
+
+        //Step 6: increment or decrement depending on button clicked
+        if ($(this).attr('id') == 'forward'){
+            index++;
+            //Step 9: pass new attribute to update symbols
+            updatePropSymbols(map, attributes[index]);
+
+            //Step 7: if past the last attribute, wrap around to first attribute
+            index = index > 6 ? 0 : index;
+        } else if ($(this).attr('id') == 'reverse'){
+            index--;
+            //Step 7: if past the first attribute, wrap around to last attribute
+            index = index < 0 ? 6 : index;
+        };
+
+        //Step 8: update slider
+        $('.range-slider').val(index);
+    });
+    
+};
+
+function updatePropSymbols(map,attribute){
+    map.eachLayer(function(layer){
+        if (layer.feature && layer.feature.properties[attribute]){
+            //access feature properties
+            var props = layer.feature.properties;
+
+            //update each feature's radius based on new attribute values
+            var radius = calcPropRad(props[attribute]);
+            layer.setRadius(radius);
+
+            //add city to popup content string
+            var popupContent = "<p><b>City:</b> " + props.City + "</p>";
+
+            //add formatted attribute to panel content string
+            var year = attribute.split("_")[1];
+            popupContent += "<p><b>Population in " + year + ":</b> " + props[attribute] + " million</p>";
+
+            //replace the layer popup
+            layer.bindPopup(popupContent, {
+                offset: new L.Point(0,-radius)
+            });
+        };
+	});
+	
+};
+function processData(data){
+    //empty array to hold attributes
+    var attributes = [];
+
+    //properties of the first feature in the dataset
+    var properties = data.features[0].properties;
+
+    //push each attribute name into attributes array
+    for (var attribute in properties){
+        //only take attributes with population values
+        if (attribute.indexOf("Pop") > -1){
+            attributes.push(attribute);
+        };
+    };
+
+    //check result
+    console.log(attributes);
+
+    return attributes;
 };
 
 $(document).ready(createMap);
