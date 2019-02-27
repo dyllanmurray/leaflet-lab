@@ -56,101 +56,9 @@ function createMap(){
     
     getData(map);
 };
-var attributes;
-var index;
 
-function createSequenceControls(map, attributes){
-    //create range input element (slider)
-	var SequenceControl = L.Control.extend({
-        options: {
-            position: 'bottomleft'
-        },
-
-       onAdd: function (map) {
-            // create the control container with a particular class name
-            var container = L.DomUtil.create('div', 'sequence-control-container');
-
-            //create range input element (slider)
-            $(container).append('<input class="range-slider" type="range">');
-
-            //add skip buttons
-            $(container).append('<button class="skip" id="reverse" title="Previous Year">Previous</button>');
-            $(container).append('<button class="skip" id="forward" title="Next Year">Next</button>');
-
-            $(container).on('mousedown dblclick', function(e){
-				L.DomEvent.stopPropagation(e);
-            });
-
-            return container;
-        }
-    });
-    map.addControl(new SequenceControl());
-	
-    //set slider attributes
-    $('.range-slider').attr({
-        max: 8,
-        min: 0,
-        value: 0,
-        step: 1
-        
-    });
-      
-    $('.skip').click(function(){
-        //get the old index value
-        var index = $('.range-slider').val();
-        
-     //Step 6: increment or decrement depending on button clicked
-        if ($(this).attr('id') == 'forward'){
-            index++;
-            //Step 9: pass new attribute to update symbols
-            updatePropSymbols(map, attributes[index]);
-			
-            //Step 7: if past the last attribute, wrap around to first attribute
-            index = index > 7 ? 0 : index;
-        } else if ($(this).attr('id') == 'reverse'){
-            index--;
-            //Step 7: if past the first attribute, wrap around to last attribute
-            index = index < 0 ? 7 : index;
-            updatePropSymbols(map, attributes[index]);
-		                                      
-        };
-       //Step 8: update slider
-        $('.range-slider').val(index);
-        updatePropSymbols(map, attributes[index]);
-		                
-        $('.range-slider').on('input', function(){
-        //Step 6: get the new index value
-        var index = $(this).val();
-			// updateLegend(map,attribute[index]);
-			updatePropSymbols(map, attributes[index]);
-						
-            //check
-            console.log(attributes)
-        });
-    });
-};
-
-//function called to update the symbols and popup with slider and buttons
-function updatePropSymbols(map,attribute){
-    map.eachLayer(function(layer){
-        if (layer.feature && layer.feature.properties[attribute]){
-            //access feature properties
-            var props = layer.feature.properties;
-
-            //update each feature's radius based on new attribute values
-            var radius = calcPropRad(props[attribute]);
-            layer.setRadius(radius);
-			// updateLegend(map, attribute);			
-            createPopup(props, attribute, layer, radius);
-			
-			
-				
-		};
-	});
-	
-};
 // function to retrieve the data and place it on the map
-//This snippet loops through the geojson and prepares a popup for each feature/////
+// This snippet loops through the geojson and prepares a popup for each feature/////
 function onEachFeature(feature, layer) {
     //no property named popupContent; instead, create html string with all properties
     var popupContent = "";
@@ -162,29 +70,61 @@ function onEachFeature(feature, layer) {
         layer.bindPopup(popupContent);
     };
 };
+function createPropSymbols(data, map){
+    //create marker options
+    var geojsonMarkerOptions = {
+        radius: 8,
+        fillColor: "#ff7800",
+        color: "#000",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8
+    };
+     //Step 4: Determine which attribute to visualize with proportional symbols
+    var attribute = "Pop_2010";
+
+    //create a Leaflet GeoJSON layer and add it to the map
+    L.geoJson(data, {
+        pointToLayer: function (feature, latlng) {
+            //Step 5: For each feature, determine its value for the selected attribute
+            var attValue = Number(feature.properties[attribute]);
+
+            //Step 6: Give each feature's circle marker a radius based on its attribute value
+            geojsonMarkerOptions.radius = calcPropRad(attValue);
+
+            //examine the attribute value to check that it is correct
+            console.log(feature.properties, attValue);
+
+            //create circle markers
+            return L.circleMarker(latlng, geojsonMarkerOptions);
+        }
+
+    }).addTo(map);
+};
+
+//Step 2: Import GeoJSON data
 function getData(map){
     //load the data
     $.ajax("data/outsideTop25.geojson", {
         dataType: "json",
         success: function(response){
-            var geoJsonMarkerOptions = {
-                radius: 8,
-                fillColor: "#ff7800",
-                color: "000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            };
-
-            //create a Leaflet GeoJSON layer and add it to the map
-            L.geoJson(response, {
-                pointToLayer: function(feature, latlng){
-                    return L.circleMarker(latlng, geoJsonMarkerOptions)
-                }, 
-                onEachFeature: onEachFeature
-            }).addTo(map);
+            //call function to create proportional symbols
+            createPropSymbols(response, map);
         }
     });
 };
+
+function calcPropRad(attValue) {
+    //scale factor to adjust symbol size evenly
+    var scaleFactor = .003;
+    //area based on attribute value and scale factor
+    var area = attValue * scaleFactor;
+    //radius calculated based on area
+    var radius = Math.sqrt(area/Math.PI);
+
+    return radius;
+
+};
+
 
 $(document).ready(createMap);
