@@ -1,3 +1,10 @@
+
+    var map = L.map('map', {
+        center:  [38.832, -97.333],
+        zoom: 4.5,
+        // layers: [Esri_WorldTopoMap]
+    });
+
 function createMap(){
     //create the map
     //dark matter basemap
@@ -40,26 +47,32 @@ function createMap(){
         "Topo": Esri_WorldTopoMap
     };
 
-    var map = L.map('map', {
-        center:  [38.832, -97.333],
-        zoom: 4.5,
-        layers: [Esri_WorldTopoMap]
-    });
+
 
     //add esri basemao tilelayer
     
     var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
     }).addTo(map);
-    	//control layers
+
+
+     
     L.control.layers(baseMaps).addTo(map);
-    
-    // getData(map);
 };
 
 
-
-
-
+var style = {
+    "color": "#dd1c77",
+    "weight": 5,
+    "opacity": 0.8
+};
+function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.UNIT_NAME) {
+        layer.bindPopup(feature.properties.UNIT_NAME);
+    }
+}
+var layer = L.geoJson(null, {style: style, onEachFeature: onEachFeature});
+omnivore.topojson('data/natparks.json', null, layer).addTo(map);
 
 $(document).ready(createMap);

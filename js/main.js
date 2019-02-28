@@ -11,15 +11,7 @@ function createMap(){
      var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
-    
-    //add stamen water color map
-    var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-	subdomains: 'abcd',
-	minZoom: 1,
-	maxZoom: 16,
-	ext: 'jpg'
-    });
+
 
     //add esri_ world physical basemap
     var Esri_WorldPhysical = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -33,9 +25,8 @@ function createMap(){
 
 
     var baseMaps = {
-        "Dark Matter": CartoDB_DarkMatter,
+        "Dark": CartoDB_DarkMatter,
         "Imagery": Esri_WorldImagery,
-        "Stamen Water Color": Stamen_Watercolor,
         "Physical": Esri_WorldPhysical,
         "Topo": Esri_WorldTopoMap
     };
@@ -45,14 +36,45 @@ function createMap(){
         zoom: 4.5,
         layers: [Esri_WorldTopoMap]
     });
+	let parks = L.layerGroup();
+	
+	// cycle through geojson to get an array
+	jQuery.getJSON( "https://opendata.arcgis.com/datasets/b1598d3df2c047ef88251016af5b0f1e_0.geojson", function(json){
+		L.geoJSON(json, {
+			onEachFeature: addMyData,
+			color: 'grey',
+			fillColor: 'green' ,
+			fillOpacity: .6,
+			weight: .1,
+			opacity: 1
+		})
+	});
+	// This function is run for every feature found in the geojson file. It adds the feature to the empty layer we created above
+	function addMyData(feature, layer){
+        if(layer.feature.properties.PARKNAME !== ''){
+        parks.addLayer(layer);
+        console.log(layer)
+        layer.bindPopup("<p><b>Park:</b> " + layer.feature.properties.PARKNAME +  "</p><b>State:</b> " + layer.feature.properties.STATE);
+        }
 
+        // parks.addLayer(layer);
+        // console.log(layer)
+        // layer.bindPopup("<p><b>Park:</b> " + layer.feature.properties.PARKNAME +  "</p><b>State:</b> " + layer.feature.properties.STATE);
+        // // layer.popupContent(function(evt){console.log(evt)});
+        
+	};
+	var overlayMaps = {
+		"National Parks": parks
+    };
     //add esri basemao tilelayer
     
     var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
     }).addTo(map);
-    	//control layers
-    L.control.layers(baseMaps).addTo(map);
+
+
+     
+    L.control.layers(baseMaps, overlayMaps).addTo(map);
     
     getData(map);
 };
@@ -161,7 +183,7 @@ function createSequenceControls(map, attributes){
 
     //set slider attributes
     $('.range-slider').attr({
-        max: 6,
+        max: 7,
         min: 0,
         value: 0,
         step: 1
@@ -178,11 +200,11 @@ function createSequenceControls(map, attributes){
             updatePropSymbols(map, attributes[index]);
 
             //Step 7: if past the last attribute, wrap around to first attribute
-            index = index > 6 ? 0 : index;
+            index = index > 7 ? 0 : index;
         } else if ($(this).attr('id') == 'reverse'){
             index--;
             //Step 7: if past the first attribute, wrap around to last attribute
-            index = index < 0 ? 6 : index;
+            index = index < 0 ? 7 : index;
         };
 
         //Step 8: update slider
